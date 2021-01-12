@@ -1,0 +1,46 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# client
+client/node_modules
+client/.pnp
+client/.pnp.js
+client/coverage
+client/npm-debug.log*
+client/yarn-debug.log*
+client/yarn-error.log*
+client/build
+client/.env*
+
+# node
+node/node_modules
+node/.env*
+
+# affinity/adobe
+templates/
+
+# quarkus
+quarkus/.gradle/
+quarkus/build/
+quarkus/.project
+quarkus/.classpath
+quarkus/.settings/
+quarkus/bin/
+quarkus/.idea
+quarkus/*.ipr
+quarkus/*.iml
+quarkus/*.iws
+quarkus/nb-configuration.xml
+quarkus/.vscode
+quarkus/.factorypath
+quarkus/*.swp
+quarkus/*.swo
+quarkus/*.orig
+quarkus/*.rej
+quarkus/.env*
+quarkus/src/main/resources/application.properties
+
+# python
+python/.env*
+
+# misc
+*.DS_Store

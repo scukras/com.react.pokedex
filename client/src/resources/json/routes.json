@@ -1,0 +1,19 @@
+{
+    "server": {
+        "api": {
+            "root": "/pokedex/api",
+            "connected": "/connected",
+            "resources": {
+                "root": "/resources",
+                "landingGet": "/landing"
+            }
+        }
+    },
+    "client": {
+        "root": "/",
+        "home": "/home",
+        "pokemon": "/pokemon",
+        "search": "/search",
+        "login": "/login"
+    }
+}
