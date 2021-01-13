@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const {graphqlHTTP} = require('express-graphql');
+const Schema = require('./graphqlSchema/Schema');
 require('dotenv').config()
 
 const indexRouter = require('./routes/index');
@@ -21,6 +23,13 @@ app.use((req, res, next) => {
     next();
 });
 
+const DbService = require('./services/DbService');
+DbService.connect(process.env);
+
+app.use('/graphql', graphqlHTTP({
+    schema: Schema,
+    graphiql: true
+}));
 app.use('/', indexRouter);
 
 module.exports = app;
