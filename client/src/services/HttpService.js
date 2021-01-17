@@ -14,6 +14,10 @@ class HttpService {
         return axios.post(this.baseUrl + url, body);
     };
 
+    graphql = (body) => {
+        return axios.post(this.baseUrl + '/graphql', body);
+    };
+
     getPokeApi = url => {
         return axios.get(url);
     };

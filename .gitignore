@@ -44,3 +44,4 @@ python/.env*
 
 # misc
 *.DS_Store
+client/.eslintcache

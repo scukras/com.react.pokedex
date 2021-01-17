@@ -2,7 +2,7 @@ const { GraphQLObjectType, GraphQLList, GraphQLString, GraphQLInt, GraphQLBoolea
 
 const PokemonTypeObject = new GraphQLObjectType({
     name: 'pokemonType',
-    description: 'Pokemon type',
+    description: 'Pokémon type',
     fields: () => ({
         name: { type: GraphQLString },
         url: { type: GraphQLString }
@@ -20,7 +20,7 @@ const TypesType = new GraphQLObjectType({
 
 const StatType = new GraphQLObjectType({
     name: 'stat',
-    description: 'Pokemon stat information',
+    description: 'Pokémon stat information',
     fields: () => ({
         name: { type: GraphQLString },
         url: { type: GraphQLString }
@@ -65,7 +65,7 @@ const SpriteOtherType = new GraphQLObjectType({
 
 const SpritesType = new GraphQLObjectType({
     name: 'sprites',
-    description: 'Pokemon sprites',
+    description: 'Pokémon sprites',
     fields: () => ({
         back_default: { type: GraphQLString },
         back_female: { type: GraphQLString },
@@ -81,7 +81,7 @@ const SpritesType = new GraphQLObjectType({
 
 const SpeciesType = new GraphQLObjectType({
     name: 'species',
-    description: 'Pokemon species information',
+    description: 'Pokémon species information',
     fields: () => ({
         name: { type: GraphQLString },
         url: { type: GraphQLString }
@@ -136,7 +136,7 @@ const MovesType = new GraphQLObjectType({
 
 const VersionType = new GraphQLObjectType({
     name: 'version',
-    description: 'Pokemon game version',
+    description: 'Pokémon game version',
     fields: () => ({
         name: { type: GraphQLString },
         url: { type: GraphQLString }
@@ -154,7 +154,7 @@ const GameIndicesType = new GraphQLObjectType({
 
 const AbilityType = new GraphQLObjectType({
     name: 'ability',
-    description: 'Pokemon ability',
+    description: 'Pokémon ability',
     fields: () => ({
         name: { type: GraphQLString },
         url: { type: GraphQLString }

@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", '*'); //[process.env.CLIENT_HOST + ':' + process.env.CLIENT_PORT]);
-    res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
+    res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
     next();
 });
@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 const DbService = require('./services/DbService');
 DbService.connect(process.env);
 
-app.use('/graphql', graphqlHTTP({
+app.post('/graphql', graphqlHTTP({
     schema: Schema,
     graphiql: true
 }));

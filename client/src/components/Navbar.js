@@ -4,7 +4,7 @@ import routes from '../resources/json/routes.json';
 
 const links = {
     home: { title: 'Home', path: routes.client.home, ref: React.createRef() },
-    pokemon: { title: 'Pokemon', path: routes.client.pokemon, ref: React.createRef() },
+    pokemon: { title: 'Pokémon', path: routes.client.pokemon, ref: React.createRef() },
     search: { title: 'Search', path: routes.client.search, ref: React.createRef() },
     login: { title: 'Login', path: routes.client.login, ref: React.createRef() }
 };
