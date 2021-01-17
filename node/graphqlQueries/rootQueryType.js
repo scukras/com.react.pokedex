@@ -3,6 +3,8 @@ const DbService = require('../services/DbService');
 const EncounterMethodsType = require('../graphqlTypes/EncounterMethodsType');
 const GameVersionsType = require('../graphqlTypes/GameVersionsType');
 const LocationAreaEncountersType = require('../graphqlTypes/LocationAreaEncountersType');
+const PokemonType = require('../graphqlTypes/PokemonType');
+const StatsType = require('../graphqlTypes/StatsType');
 
 const collections = {
     encounterMethods: 'encounter_methods',
@@ -40,6 +42,20 @@ module.exports.rootQueryType = new GraphQLObjectType({
             description: '',
             resolve: async (parent) => {
                 return await DbService.getDb().collection(collections.locationAreaEncounters).find().toArray()
+            }
+        },
+        pokemon: {
+            type: new GraphQLList(PokemonType),
+            description: '',
+            resolve: async (parent) => {
+                return await DbService.getDb().collection(collections.pokemon).find().toArray()
+            }
+        },
+        stats: {
+            type: new GraphQLList(StatsType),
+            description: '',
+            resolve: async (parent) => {
+                return await DbService.getDb().collection(collections.stats).find().toArray()
             }
         }
     })
