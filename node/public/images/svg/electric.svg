@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="electric">
+        <g id="electric1" serif:id="electric" transform="matrix(8.31983,0,0,8.31983,-995.724,-684.963)">
+            <circle cx="149.73" cy="112.378" r="30.049" style="fill:rgb(254,208,22);"/>
+        </g>
+        <path d="M187.645,107.575L301.532,107.575L354.579,271.135L269.327,271.135L302.953,403.511L130.367,199.702L218.113,199.702L187.645,107.575Z" style="fill:white;"/>
+    </g>
+</svg>

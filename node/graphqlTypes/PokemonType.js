@@ -88,8 +88,8 @@ const SpeciesType = new GraphQLObjectType({
     })
 });
 
-const MoveLearnedMethodType = new GraphQLObjectType({
-    name: 'moveLearnedMethod',
+const MoveLearnMethodType = new GraphQLObjectType({
+    name: 'moveLearnMethod',
     description: 'Methods in which Pokémon can learn moves in this version group.',
     fields: () => ({
         name: { type: GraphQLString },
@@ -111,7 +111,7 @@ const VersionGroupDetailsType = new GraphQLObjectType({
     description: 'Game version specific move details',
     fields: () => ({
         level_learned_at: { type: GraphQLInt },
-        move_learned_method: { type: MoveLearnedMethodType },
+        move_learn_method: { type: MoveLearnMethodType },
         version_group: { type: VersionGroupType }
     })
 });

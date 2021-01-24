@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="flying" transform="matrix(8.31983,0,0,8.31983,-1777.47,-692.505)">
+        <g id="flying1" serif:id="flying" transform="matrix(1,0,0,1,93.962,0.906584)">
+            <circle cx="149.73" cy="112.378" r="30.049" style="fill:rgb(0,123,164);"/>
+        </g>
+        <g transform="matrix(0.120195,0,0,0.120195,213.643,83.2355)">
+            <path d="M234.586,372.215C218.124,418.399 145.264,445.883 93.787,372.215C82.737,356.403 84.062,301.741 110.268,278.668C170.9,225.285 332.436,102.822 377.15,84.669C393.737,77.935 414.355,75.783 402.108,104.909C389.861,134.034 331.451,194.154 332.749,208.097C334.828,230.443 413.351,226.709 414.585,238.985C415.819,251.262 340.153,265.518 340.153,281.756C340.153,292.261 421.045,320.84 414.585,336.414C410.561,346.118 323.433,332.549 316.005,339.977C310.084,345.897 329.849,393.399 319.497,398.772C296.076,410.929 269.693,378.138 253.895,372.215C247.868,369.956 236.434,367.031 234.586,372.215Z" style="fill:rgb(147,205,218);"/>
+        </g>
+    </g>
+</svg>

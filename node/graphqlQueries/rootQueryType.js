@@ -1,4 +1,4 @@
-const {GraphQLObjectType, GraphQLString, GraphQLList} = require('graphql');
+const { GraphQLObjectType, GraphQLString, GraphQLList, GraphQLInt} = require('graphql');
 const DbService = require('../services/DbService');
 const EncounterMethodsType = require('../graphqlTypes/EncounterMethodsType');
 const GameVersionsType = require('../graphqlTypes/GameVersionsType');
@@ -47,8 +47,40 @@ module.exports.rootQueryType = new GraphQLObjectType({
         pokemon: {
             type: new GraphQLList(PokemonType),
             description: '',
-            resolve: async (parent) => {
-                return await DbService.getDb().collection(collections.pokemon).find().toArray()
+            args: {
+                id: { type: GraphQLInt },
+                name: { type: GraphQLString }
+            },
+            resolve: async (parent, args) => {
+
+                if (!args.id && !args.name) {
+                    return await DbService.getDb().collection(collections.pokemon).find(args).toArray()
+                }
+                
+                const moves = [];
+                const docs = await DbService.getDb().collection(collections.pokemon).find(args).toArray()
+                
+                docs[0].moves.forEach(move => {
+                    const version_group_details = [];
+
+                    move.version_group_details.forEach(detail => {
+                        if (detail.version_group.name === 'red-blue' || detail.version_group.name === 'yellow') {
+                            version_group_details.push(detail);
+                        }
+                    });
+
+                    if (version_group_details.length > 0) {
+                        delete move.version_group_details;
+                        move['version_group_details'] = version_group_details;
+                        moves.push(move);
+                    }
+
+                });
+
+                let filteredDocs = docs[0];
+                delete filteredDocs.moves;
+                filteredDocs['moves'] = moves;
+                return [filteredDocs];
             }
         },
         stats: {

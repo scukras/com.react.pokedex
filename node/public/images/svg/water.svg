@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g id="water" transform="matrix(8.31983,0,0,8.31983,-1777.47,-692.505)">
+        <g id="water1" serif:id="water" transform="matrix(1,0,0,1,93.962,0.906584)">
+            <circle cx="149.73" cy="112.378" r="30.049" style="fill:rgb(46,142,255);"/>
+        </g>
+        <g transform="matrix(0.120195,0,0,0.120195,213.643,83.2355)">
+            <path d="M250,71.918C249.465,71.918 230.494,100.934 207.617,138.071C175.114,190.832 135.8,254.039 135.8,293.055C135.8,380.891 206.295,413.216 250,413.216C325.257,413.216 367.068,347.7 364.223,293.055C362.369,257.444 330.049,198.772 300.823,150.628C290.289,133.275 279.824,117.644 271.447,104.668C258.753,85.009 250.371,71.918 250,71.918Z" style="fill:white;stroke:white;stroke-width:0.63px;"/>
+        </g>
+        <g transform="matrix(0.120195,0,0,0.120195,213.643,83.2355)">
+            <path d="M191.207,281.594C189.346,281.403 181.842,295.729 180.38,303.998C178.4,315.194 178.843,328.024 182.95,336.414C191.639,354.163 199.952,371.336 237.989,376.945C256.107,379.617 279.257,370.197 290.501,358.953C308.059,341.395 311.304,315.445 308.074,312.215C306.281,310.422 301.515,327.485 283.36,338.915C274.29,344.626 254.415,352.311 230.924,344.163C216.224,339.064 202.837,326.588 195.161,308.322C191.084,298.622 192.971,281.776 191.207,281.594Z" style="fill:rgb(46,142,255);stroke:white;stroke-width:0.63px;"/>
+        </g>
+    </g>
+</svg>

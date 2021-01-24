@@ -14,23 +14,40 @@ function Navbar(props) {
     const [selectedNavbarLink, setSelectedNavbarLink] = React.useState({ current: 'home', previous: 'home' });
 
     useEffect(() => {
-        const {current, previous} = selectedNavbarLink;
-        
+        let pathname = window.location.pathname.split('/')[1];
+        if (selectedNavbarLink.current !== pathname) {
+            if (pathname === '' || pathname === 'landing') {
+                pathname = 'home';
+            }
+            setSelectedNavbarLink({ current: pathname, previous: 'home' })
+        }
+    }, [selectedNavbarLink]);
+
+    useEffect(() => {
+        const { current, previous } = selectedNavbarLink;
         links[previous.toLowerCase()].ref.current.className = 'navbarLink';
         links[current.toLowerCase()].ref.current.className = 'navbarLinkSelected';
-
     }, [selectedNavbarLink]);
 
     const onClickLink = e => {
-        const previous = selectedNavbarLink.current;
-        setSelectedNavbarLink({ current: e.target.id, previous });
+        let current = e.target.id;
+        let  previous = selectedNavbarLink.current;
+
+        if (previous === 'Pokémon') {
+            previous = 'pokemon';
+        }
+        if (e.target.id === 'Pokémon') {
+            current = 'pokemon';
+        }
+
+        setSelectedNavbarLink({ current, previous });
     };
 
     return (
         <React.Fragment>
             <div className="row justify-content-center navbarRow" style={{ background: '#2A5793'}}>
                 <div className="col-2 navLinkContainer">
-                    <Link className="navbarLinkSelected" id={links.home.title} to={links.home.path} ref={links.home.ref} onClick={onClickLink}>{links.home.title}</Link>
+                    <Link className="navbarLink" id={links.home.title} to={links.home.path} ref={links.home.ref} onClick={onClickLink}>{links.home.title}</Link>
                 </div>
                 <div className="col-2 navLinkContainer">
                     <Link className="navbarLink" id={links.pokemon.title} to={links.pokemon.path} ref={links.pokemon.ref} onClick={onClickLink}>{links.pokemon.title}</Link>

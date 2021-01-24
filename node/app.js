@@ -26,10 +26,16 @@ app.use((req, res, next) => {
 const DbService = require('./services/DbService');
 DbService.connect(process.env);
 
+app.get('/graphql', graphqlHTTP({
+    schema: Schema,
+    graphiql: true
+}));
+
 app.post('/graphql', graphqlHTTP({
     schema: Schema,
     graphiql: true
 }));
+
 app.use('/', indexRouter);
 
 module.exports = app;
