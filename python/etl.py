@@ -7,6 +7,7 @@ getPokemonStats         = True
 getPokemonLocationAreas = True
 getEncounterMethod      = True
 getGameVersion          = True
+getMove                 = True
 
 config = ConfigReader('develop')
 
@@ -100,3 +101,24 @@ if getGameVersion:
         versions.append(res.json())
 
     db['game_versions'].insert_many(versions)
+
+if getMove:
+
+    moves_list = requests.get('https://pokeapi.co/api/v2/move?limit=1000')
+
+    moves = []
+
+    for i, move in enumerate(moves_list.json()['results']):
+        i += 1
+        name = move['name']
+
+        url = 'https://pokeapi.co/api/v2/move/' + str(i)
+        print(url)
+        move_details = requests.get(url)
+
+        try:
+            moves.append(move_details.json())
+        except:
+            pass
+
+    db['moves'].insert_many(moves)

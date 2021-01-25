@@ -4,9 +4,10 @@ import Weight from './pokemonDetails/Weight';
 import Types from './pokemonDetails/Types';
 import Stats from './pokemonDetails/Stats';
 import StatsRadar from './pokemonDetails/StatsRadar';
+import Moves from './pokemonDetails/Moves';
 import HttpService from '../services/HttpService';
 import StateService from '../services/StateService';
-import {GetOnePokemonDetails} from '../resources/queries/PokemonQueries';
+import { GetOnePokemonDetails} from '../resources/queries/PokemonQueries';
 
 export default function PokemonDetails(props) {
 
@@ -68,7 +69,7 @@ export default function PokemonDetails(props) {
                     <span className="desktopRender">
                         <div className="row">
                             <div className="col-5 offset-1">
-                            <img className="col-8" src={'https://assets.pokemon.com/assets/cms2/img/pokedex/full/' + formatPokemonIdForPng() + '.png'} alt={props.pokemonName + '.png'}/>
+                                <img className="col-8" src={'https://assets.pokemon.com/assets/cms2/img/pokedex/full/' + formatPokemonIdForPng() + '.png'} alt={props.pokemonName + '.png'}/>
                             </div>
                             <div className="col-6 statsBlock">
                                 <div className="row">
@@ -100,6 +101,11 @@ export default function PokemonDetails(props) {
                                         <StatsRadar name={pokemonDetails.name} stats={pokemonDetails.stats} />
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div className="row justify-content-center">
+                            <div className="col-10">
+                                <Moves moves={pokemonDetails.moves}/>
                             </div>
                         </div>
                     </span>

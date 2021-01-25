@@ -10,7 +10,7 @@ export const GetPokemonAll = `
 `;
 
 export const GetOnePokemonDetails = `
-    query ( $name: String!){
+    query ($name: String!) {
         pokemon (name: $name) {
             id
             order
@@ -53,4 +53,20 @@ export const GetOnePokemonDetails = `
             }
         }
     }
+`;
+
+export const GetPokemonMoveDetails = `
+query ($names: [String!]) {
+	moves (name: $names) {
+    id
+    accuracy
+    power
+    pp
+    name
+    priority
+    type {
+      name
+    }
+  }
+}
 `;

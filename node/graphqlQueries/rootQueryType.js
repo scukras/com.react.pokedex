@@ -5,13 +5,15 @@ const GameVersionsType = require('../graphqlTypes/GameVersionsType');
 const LocationAreaEncountersType = require('../graphqlTypes/LocationAreaEncountersType');
 const PokemonType = require('../graphqlTypes/PokemonType');
 const StatsType = require('../graphqlTypes/StatsType');
+const MovesType = require('../graphqlTypes/MovesType');
 
 const collections = {
     encounterMethods: 'encounter_methods',
     gameVersions: 'game_versions',
     locationAreaEncounters: 'location_area_encounters',
     pokemon: 'pokemon',
-    stats: 'stats'
+    stats: 'stats',
+    moves: 'moves'
 };
 
 const connectTobDb = async () => {
@@ -88,6 +90,26 @@ module.exports.rootQueryType = new GraphQLObjectType({
             description: '',
             resolve: async (parent) => {
                 return await DbService.getDb().collection(collections.stats).find().toArray()
+            }
+        },
+        moves: {
+            type: new GraphQLList(MovesType),
+            description: '',
+            args: {
+                id: { type: GraphQLList(GraphQLInt) },
+                name: { type: GraphQLList(GraphQLString) }
+            },
+            resolve: async (parent, args) => {
+                let query;
+                
+                if (args.id && !args.name)
+                    query = { id: { $in: args.id } };
+                else if (!args.id && args.name)
+                    query = { name: { $in: args.name } };
+                else 
+                    query = { id: { $in: args.id }, name: { $in: args.name } };
+                    
+                return await DbService.getDb().collection(collections.moves).find(query).toArray();
             }
         }
     })
