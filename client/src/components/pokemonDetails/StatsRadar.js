@@ -23,6 +23,6 @@ export default function StatsRadar(props) {
     });
 
     return (
-        <RadarPlot data={data}/>
+        <RadarPlot name={props.name} data={data}/>
     )
 }

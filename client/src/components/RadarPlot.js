@@ -24,6 +24,8 @@ export default function RadarPlot(props) {
                 }
             })
 
+            const pokemonName = props.name.charAt(0).toUpperCase() + props.name.slice(1);
+
             r.push(r[0]);
             theta.push(theta[0]);
 
@@ -32,7 +34,8 @@ export default function RadarPlot(props) {
                 r,
                 theta,
                 fill: 'toself',
-                name: props.name
+                name: pokemonName,
+                hovertemplate: 'Val: %{r}<br>Stat: %{theta}'
             }
 
             data.push(dataObj);
@@ -50,7 +53,15 @@ export default function RadarPlot(props) {
             },
             paper_bgcolor: '#1e1e1e',
             showlegend: false,
-            height: 400
+            height: 250,
+            width: 250,
+            margin: {
+                l: 5,
+                r: 5,
+                b: 0,
+                t: 0,
+                pad: 0
+            }
         }
 
         console.log(data);
